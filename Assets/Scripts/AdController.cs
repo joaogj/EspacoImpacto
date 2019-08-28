@@ -18,7 +18,7 @@ public class AdController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Log.d("oie")
+        Log.d("oi Paulo")
     }
 
     public void StartAd () 
