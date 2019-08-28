@@ -19,7 +19,7 @@ public class AdController : MonoBehaviour
     void Update()
     {
         Log.d("koeh")
-        Log.d("pq Ingles")
+        Log.d("Ingles")
     }
 
     public void StartAd () 
