@@ -19,7 +19,7 @@ public class AdController : MonoBehaviour
     void Update()
     {
         Log.d("oi Paulo");
-        Log.d("koeh");
+        Log.d("japones");
     }
 
     public void StartAd () 
