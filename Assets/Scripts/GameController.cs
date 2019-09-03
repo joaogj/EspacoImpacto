@@ -27,26 +27,23 @@ public class GameController : MonoBehaviour
     public float waveWaitPowerUp;
     public Text scoreText;
     public int score;
-    // public float scrollSpeed = 1.5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        UpdateScore();
+        UpdateScore ();
         StartCoroutine (SpawnEnemyWaves ());
         StartCoroutine (SpawnHazardWaves ());
         StartCoroutine (SpawnPowerUp ());
     }
 
-   IEnumerator SpawnEnemyWaves()
+    IEnumerator SpawnEnemyWaves()
     {
         yield return new WaitForSeconds (startWaitHazard);
         while (true)
         {
             for (int i = 0; i < enemyCount; i++)
             {
-                // GameObject enemy = enemies[Random.Range(0, enemies.Length)];
                 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x) + 0.5f, spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate (enemy, spawnPosition, spawnRotation);
@@ -73,7 +70,6 @@ public class GameController : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                // GameObject hazard = hazards[Random.Range(0, hazards.Length)];
                 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x) + 0.5f, spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate (hazard, spawnPosition, spawnRotation);
@@ -104,7 +100,6 @@ public class GameController : MonoBehaviour
     public void AddScore (int newScoreValue)
     {
         score += newScoreValue;
-        Debug.Log("pontuação aumenta: " + score);
         UpdateScore ();
     }
 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DestroyByContatc : MonoBehaviour
 {
-    private int scoreValue = 10;
+    private int asteroidScoreValue = 5;
+    private int enemyScoreValue = 10;
     private GameController gameController;
 
     void Start ()
@@ -27,15 +28,20 @@ public class DestroyByContatc : MonoBehaviour
         }
         if(gameObject.tag == "Bullet")
         {
-            if(other.tag == "Asteroid" || other.tag == "Enemy")
+            if(other.tag == "Asteroid")
             {
                 Destroy(gameObject);
                 Destroy(other.gameObject);
-                gameController.AddScore (scoreValue);
-                Debug.Log("pontuação aumenta");
+                gameController.AddScore (asteroidScoreValue);
+            }
+
+            if(other.tag == "Enemy")
+            {
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+                gameController.AddScore (enemyScoreValue);
             }
         }
-        // Destroy(other.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D col)
