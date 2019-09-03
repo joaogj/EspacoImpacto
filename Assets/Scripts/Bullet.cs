@@ -16,7 +16,6 @@ public class Bullet : MonoBehaviour
     {
         if(col.gameObject.tag == "MainCamera")
         {
-            // Debug.Log("colidiu");
             Destroy(gameObject);
             // TO-DO: Adicionar restante do lifecicle
         }
@@ -25,16 +24,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if(gameObject.tag != "Enemy")
-    //     {
-    //         if(col.tag == "Asteroid" || col.tag == "Enemy")
-    //         {
-    //             Destroy(gameObject);
-    //             Destroy(col.gameObject);
-    //         }
-    //     }
-    // }
 }
